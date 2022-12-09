@@ -1,9 +1,14 @@
+@import "../../styles.scss";
+
 .rightbar{
+  @include themify($themes){
   flex: 3;
   position: sticky;
   top: 70px;
   height: calc(100vh - 70px );
   overflow: scroll;
+  background-color: themed("bgSoft");
+
   
   &::-webkit-scrollbar{
     display: none;
@@ -20,6 +25,7 @@
       margin-bottom: 20px;
       background-color: themed("bg");
 
+      //--- Card Titles ---//
       span{
         color: gray;
       }
@@ -55,20 +61,22 @@
             left: 30px;
           }
 
+          //--- Latest Activity Text ---//
           p{
-            color: gray;
+            color: themed("textColorSoft");
             font-size: 14px;
           }
 
           span{
             font-weight: 500;
-            color: black;
+            color: themed("textColor");
             font-size: 14px;
           }
         }
 
         span{
           font-size: 14px;
+          color: themed("textColor");
         }
 
         .buttons{
@@ -93,6 +101,7 @@
         }
       }
     }
+  }
   }
 }
 
