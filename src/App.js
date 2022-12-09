@@ -22,13 +22,13 @@ function App() {
 
   const currentUser = true;
 
-  // const { darkMode } = useContext(DarkModeContext);
+  const { darkMode } = useContext(DarkModeContext);
 
-  // console.log(darkMode)
+  console.log(darkMode)
 
   const Layout = () => {
     return(
-      <div className='theme-dark'>
+      <div className={`theme-${darkMode ? "dark" : "light"}`}>
         <NavBar />
         <div style={{display:"flex"}}>
           <LeftBar />

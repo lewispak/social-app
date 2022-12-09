@@ -4,7 +4,7 @@ export const DarkModeContext = createContext();
 
 export const DarkModeContextProvider = ({children}) => {
   const [darkMode, setDarkMode] = useState(
-    localStorage.getItem("chakra-ui-color-mode") || false
+    JSON.parse(localStorage.getItem("darkMode")) || false
   );
 
   const toggle = () => {
@@ -12,12 +12,12 @@ export const DarkModeContextProvider = ({children}) => {
   };
 
   useEffect(() => {
-    localStorage.setItem("chakra-ui-color-mode", darkMode)
+    localStorage.setItem("darkMode", darkMode)
   },[darkMode])
 
   return(
-    <DarkModeContextProvider value={{ darkMode, toggle }}>
+    <DarkModeContext.Provider value={{ darkMode, toggle }}>
       {children}
-    </DarkModeContextProvider>
+    </DarkModeContext.Provider>
   )
 }
