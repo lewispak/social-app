@@ -1,3 +1,14 @@
+# Overview
+
+Social App build with React. Dynamic functionality to come.
+
+# Instructions
+
+1. git clone [repo-url]
+2. cd into repo
+3. npm i
+4. npm start
+
 # Getting Started with Create React App
 
 Mini React boilerplate which was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
