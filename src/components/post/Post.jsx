@@ -8,6 +8,10 @@ import { Link } from "react-router-dom";
 
 
 const post = ({post}) => {
+
+  // TEMPORARY
+  const liked = false;
+
   return (
     <div className="post">
       <div className="container">
@@ -34,7 +38,18 @@ const post = ({post}) => {
 
         {/* Info Section of Post Cards */}
         <div className="info">
-
+          <div className="item">
+            {liked ? <FavoriteOutlinedIcon/> : <FavoriteBorderOutlinedIcon/>}
+            12 Likes
+          </div>
+          <div className="item">
+            <TextsmsOutlinedIcon/>
+            12 Comments
+          </div>
+          <div className="item">
+            <ShareOutlinedIcon/>
+            Share
+          </div>
         </div>
       </div>
     </div>
