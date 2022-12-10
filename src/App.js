@@ -17,10 +17,11 @@ import Profile from './pages/profile/Profile';
 import './styles.scss'
 import { useContext } from 'react';
 import { DarkModeContext } from './context/darkModeContext';
+import { AuthContext } from './context/authContext';
 
 function App() {
 
-  const currentUser = true;
+  const {currentUser} = useContext(AuthContext);
 
   const { darkMode } = useContext(DarkModeContext);
 
