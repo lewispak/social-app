@@ -11,6 +11,8 @@ const post = ({post}) => {
   return (
     <div className="post">
       <div className="container">
+
+        {/* User Section of Post Cards */}
         <div className="user">
           <div className="userInfo">
             <img src={post.profilePic} alt="" />
@@ -23,8 +25,17 @@ const post = ({post}) => {
           </div>
           <MoreHorizIcon />
         </div>
-        <div className="content"></div>
-        <div className="info"></div>
+
+        {/* Content Section of Post Cards */}
+        <div className="content">
+          <p>{post.desc}</p>
+          <img src={post.img} alt="" />
+        </div>
+
+        {/* Info Section of Post Cards */}
+        <div className="info">
+
+        </div>
       </div>
     </div>
   )
