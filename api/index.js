@@ -1,4 +1,4 @@
-import Express from "express";
+import express from "express";
 
 import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js";
@@ -6,7 +6,11 @@ import postRoutes from "./routes/posts.js";
 import commentRoutes from "./routes/comments.js";
 import likeRoutes from "./routes/likes.js";
 
-const app = Express()
+const app = express()
+
+//--- Middleware ---//
+
+app.use(express.json())
 
 //--- Endpoints to make API requests ---//
 
