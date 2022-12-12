@@ -1,7 +1,12 @@
 import { db } from "../connect.js";
 import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+
 
 //--- Operations ---//
+
+
+//--- REGISTER ---//
 
 export const register = (req,res) => {
 
@@ -29,10 +34,47 @@ export const register = (req,res) => {
 
 }
 
+//--- LOGIN ---//
+
 export const login = (req,res) => {
+
+  // Check if usr exist
+  const q = "SELECT * FROM users WHERE username = ?"
+
+  // Non-existent = error, exist = password & username
+  db.query(q, [req.body.username], (err,data) => {
+    if(err) 
+      return res.status(500).json(err);
+
+    if(data.length === 0) 
+      return res.status(404).json("User not found");
+
+    const checkPassword = bcrypt.compareSync(
+      req.body.password, 
+      data[0].password
+    );
+
+    if(!checkPassword) 
+      return res.status(400).json("Wrong password or username");
+
+    // Create token
+    const token = jwt.sign({ id:data[0].id }, "secretkey"); // can hide secretkey in separate file
+
+    const { password, ...others } = data[0]
+
+    res.cookie("accessToken", token, {
+      httpOnly: true,
+    })
+    .status(200)
+    .json(others);
+  })
 
 }
 
+//--- LOGOUT ---//
 export const logout = (req,res) => {
-
+  res.clearCookie("accessToken", {
+    secure: true,
+    sameSite: "none"
+  }).status(200).json("User has been logged out.")
 }
