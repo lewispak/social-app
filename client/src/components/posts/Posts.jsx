@@ -17,9 +17,11 @@ const Posts = () => {
 
   return (
     <div className='posts'>
-      {/* {data.map((post) => (
-        <Post post={post} key={post.id}/>
-      ))} */}
+      {error
+        ? "Something went wrong!"
+        : isLoading
+        ? "Loading..."
+        : data.map((post) => <Post post={post} key={post.id}/>)}
     </div>
   );
 };
