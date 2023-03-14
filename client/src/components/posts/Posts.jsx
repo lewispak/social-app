@@ -4,7 +4,6 @@ import Post from '../post/Post';
 
 const Posts = () => {
   //TEMPORARY
-  //TEMPORARY
   const posts = [
     {
       id: 1,
