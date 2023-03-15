@@ -58,7 +58,7 @@ export const login = (req,res) => {
       return res.status(400).json("Wrong password or username");
 
     // Create token
-    const token = jwt.sign({ id:data[0].id }, "secretkey"); // can hide secretkey in separate file
+    const token = jwt.sign({ id: data[0].id }, "secretkey"); // can hide secretkey in separate file
 
     const { password, ...others } = data[0]
 
