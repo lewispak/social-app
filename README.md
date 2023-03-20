@@ -29,13 +29,17 @@ Features:
 # Screenshots
 
 <h3>Login Page</h3>
+
 ![My Image](/client/public/images/1-login-page-screenshot.png)
 
-Home Page
+<h3>Home Page</h3>
+
 ![My Image](/client/public/images/2-home-page-screenshot.png)
 
-Profile Page
+<h3>Profile Page</h3>
+
 ![My Image](/client/public/images/3-profile-page-screenshot.png)
 
-Update Profile Component
+<h3>Update Profile Component</h3>
+
 ![My Image](/client/public/images/4-update-profile-component-screenshot.png)
