@@ -47,3 +47,9 @@ Check out a video demo walkthrough <a href="https://www.loom.com/share/9fb3b27b9
 <h3>Update Profile Component</h3>
 
 ![My Image](/client/public/images/4-update-profile-component-screenshot.png)
+
+Any questions, please don't hesitate to reach out.
+
+You can contact me on:
+<a href="https://www.linkedin.com/in/lewispakoti/" target="_blank">Linkedin</a>
+<a href="mailto:lewispakoti@gmail.com" target="_blank">Email</a>
