@@ -59,7 +59,7 @@ const Post = ({ post }) => {
   }
 
   const handleDelete = () => {
-   deleteMutation.mutate(post.id)
+    deleteMutation.mutate(post.id)
   }
 
   return (
@@ -69,7 +69,7 @@ const Post = ({ post }) => {
         {/* User Section of Post Cards */}
         <div className="user">
           <div className="userInfo">
-            <img src={post.profilePic} alt="" />
+            <img src={"/upload/" + post.profilePic} alt="" />
             <div className="details">
               <Link to={`/profile/${post.userId}`} style={{ textDecoration:"none", color: "inherit" }} >
                   <span className="name">{post.name}</span>
