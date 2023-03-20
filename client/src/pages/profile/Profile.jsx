@@ -29,18 +29,29 @@ const Profile = () => {
     })
   );
 
-  console.log(relationshipData)
-
   const { isLoading, error, data } = useQuery(["user"], () =>
     makeRequest.get("/users/find/" + userId).then((res) => {
       return res.data;
     })
   );
 
-  
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation(
+    (following) => {
+      if(following) return makeRequest.delete("/relationships?userId=" + userId);
+      return makeRequest.post("/relationships", { userId });
+    },
+    {
+      onSuccess: () => {
+        // Invalidate and refetch
+        queryClient.invalidateQueries(["relationship"]);
+      },
+    }
+  );
 
   const handleFollow = () => {
-
+    mutation.mutate(relationshipData.includes(currentUser.id))
   }
 
   return (
