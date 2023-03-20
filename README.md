@@ -28,7 +28,7 @@ Features:
 
 # Video Demo
 
-Check out a video demo walkthrough <a href="https://www.loom.com/share/9fb3b27b96e3498b9de3a7d0a1ea62d9">here</a>.
+Check out a video demo walkthrough <a href="https://www.loom.com/share/9fb3b27b96e3498b9de3a7d0a1ea62d9" target="_blank">here</a>.
 
 # Screenshots
 
