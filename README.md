@@ -28,4 +28,11 @@ Features:
 
 # Screenshots
 
-![My Image](/client/public/images/Screen%20Shot%202023-03-21%20at%2012.16.29%20PM.png)
+Login Page
+![My Image](/client/public/images/1-login-page-screenshot.png)
+
+Home Page
+![My Image](/client/public/images/2-home-page-screenshot.png)
+
+Profile Page
+![My Image](/client/public/images/3-profile-page-screenshot.png)
