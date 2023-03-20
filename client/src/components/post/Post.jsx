@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from '@tanstack/react-query';
-import { makeRequest } from '../../axios.js';
+import { makeRequest } from "../../axios.js";
+import { AuthContext } from "../../context/authContext";
 
 import "./post.scss";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
@@ -16,6 +17,8 @@ import moment from "moment"
 
 const Post = ({ post }) => {
   const [commentOpen, setCommentOpen] = useState(false);
+
+  const {currentUser} = useContext(AuthContext)
 
   const { isLoading, error, data } = useQuery(["likes", post.id], () =>
     makeRequest.get("/likes?postId="+post.id).then((res) => {
@@ -52,7 +55,7 @@ const Post = ({ post }) => {
         {/* Info Section of Post Cards */}
         <div className="info">
           <div className="item">
-            {/* {liked ? <FavoriteOutlinedIcon style={{color:"red"}}/> : <FavoriteBorderOutlinedIcon/>} */}
+            {data.includes(currentUser.id) ? <FavoriteOutlinedIcon style={{color:"red"}}/> : <FavoriteBorderOutlinedIcon/>}
             {data.length} Likes
           </div>
           <div className="item" onClick={()=>setCommentOpen(!commentOpen)}>
