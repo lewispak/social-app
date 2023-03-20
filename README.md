@@ -25,3 +25,6 @@ Features:
 7. npm start - should load to home page (http://localhost:3000)
 8. create new user or login with [username: test2, password: test2123]
 9. browse & enjoy
+
+# Screenshots
+
