@@ -4,14 +4,17 @@ import { useState } from "react";
 import { makeRequest } from "../../axios";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
+import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+
 const Update = ({setOpenUpdate, user}) => {
   
   const [cover, setCover] = useState(null)
   const [profile, setProfile] = useState(null)
   const [texts, setTexts] = useState({
-    name: "",
-    city: "",
-    website: "",
+    email: user.email,
+    name: user.name,
+    city: user.city,
+    website: user.website,
   });
 
   const upload = async (file) => {
@@ -45,6 +48,9 @@ const Update = ({setOpenUpdate, user}) => {
 
   const handleClick = async (e) => {
     e.preventDefault();
+
+    // Need to find a better way to get image URL
+
     let coverUrl;
     let profileUrl;
     
@@ -52,7 +58,9 @@ const Update = ({setOpenUpdate, user}) => {
     profileUrl = profile ? await upload(profile) : user.profilePic;
 
     mutation.mutate({ ...texts, coverPic:coverUrl, profilePic:profileUrl });
-    setOpenUpdate(false)
+    setOpenUpdate(false);
+    setCover(null);
+    setProfile(null);
   };
 
 
