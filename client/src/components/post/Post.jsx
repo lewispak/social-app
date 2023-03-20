@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useQuery } from '@tanstack/react-query';
+import { makeRequest } from '../../axios.js';
 
 import "./post.scss";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
@@ -15,8 +17,13 @@ import moment from "moment"
 const Post = ({ post }) => {
   const [commentOpen, setCommentOpen] = useState(false);
 
-  // TEMPORARY
-  const liked = true;
+  const { isLoading, error, data } = useQuery(["likes", post.id], () =>
+    makeRequest.get("/likes?postId="+post.id).then((res) => {
+      return res.data;
+    })
+  );
+
+  console.log(data)
 
   return (
     <div className="post">
@@ -45,8 +52,8 @@ const Post = ({ post }) => {
         {/* Info Section of Post Cards */}
         <div className="info">
           <div className="item">
-            {liked ? <FavoriteOutlinedIcon style={{color:"red"}}/> : <FavoriteBorderOutlinedIcon/>}
-            12 Likes
+            {/* {liked ? <FavoriteOutlinedIcon style={{color:"red"}}/> : <FavoriteBorderOutlinedIcon/>} */}
+            {data.length} Likes
           </div>
           <div className="item" onClick={()=>setCommentOpen(!commentOpen)}>
             <TextsmsOutlinedIcon/>

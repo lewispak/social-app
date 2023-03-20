@@ -31,5 +31,5 @@ export const addComment = (req,res) => {
       if (err) return res.status(500).json(err);
       return res.status(200).json("Comment has been created!");
     });
-  })
+  });
 };
