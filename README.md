@@ -28,7 +28,7 @@ Features:
 
 # Screenshots
 
-Login Page
+<h3>Login Page</h3>
 ![My Image](/client/public/images/1-login-page-screenshot.png)
 
 Home Page
