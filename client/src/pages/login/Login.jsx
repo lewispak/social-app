@@ -62,6 +62,11 @@ const Login = () => {
             {err && err}
             <button onClick={handleLogin}>Login</button>
           </form>
+          <div className="demo">
+            <p className="demo-title">Demo Account:</p>
+            <p className="demo-details">Username: test2</p>
+            <p className="demo-details">Password: test2123</p>
+          </div>
         </div>
       </div>
     </div>
