@@ -26,6 +26,10 @@ Features:
 8. create new user or login with [username: test2, password: test2123]
 9. browse & enjoy
 
+# Video Demo
+
+Check out a video demo walkthrough <a href="https://www.loom.com/share/9fb3b27b96e3498b9de3a7d0a1ea62d9">here</a>.
+
 # Screenshots
 
 <h3>Login Page</h3>
