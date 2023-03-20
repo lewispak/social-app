@@ -1,9 +1,8 @@
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { useQuery } from '@tanstack/react-query';
 import { makeRequest } from "../../axios.js";
 import { AuthContext } from "../../context/authContext";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 
 import "./post.scss";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
