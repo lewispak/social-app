@@ -51,5 +51,7 @@ Check out a video demo walkthrough <a href="https://www.loom.com/share/9fb3b27b9
 Any questions, please don't hesitate to reach out.
 
 You can contact me on:
+<br>
 <a href="https://www.linkedin.com/in/lewispakoti/" target="_blank">Linkedin</a>
+<br>
 <a href="mailto:lewispakoti@gmail.com" target="_blank">Email</a>
