@@ -28,4 +28,4 @@ Features:
 
 # Screenshots
 
-![My Image](/client/public/images/Screen%20Shot%202023-03-21%20at%2012.16.29%20PM.png.jpg)
+![My Image](/client/public/images/Screen%20Shot%202023-03-21%20at%2012.16.29%20PM.png)
