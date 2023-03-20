@@ -36,3 +36,6 @@ Home Page
 
 Profile Page
 ![My Image](/client/public/images/3-profile-page-screenshot.png)
+
+Update Profile Component
+![My Image](/client/public/images/4-update-profile-component-screenshot.png)
