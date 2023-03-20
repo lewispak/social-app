@@ -55,3 +55,7 @@ You can contact me on:
 <a href="https://www.linkedin.com/in/lewispakoti/" target="_blank">Linkedin</a>
 <br>
 <a href="mailto:lewispakoti@gmail.com" target="_blank">Email</a>
+<br>
+
+Cheers,
+Lewis Pakoti
