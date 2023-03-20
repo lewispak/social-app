@@ -44,7 +44,7 @@ const Comments = ({postId}) => {
         <img src={"/upload/" + currentUser.profilePic} alt="" />
         <input 
           type="text"  
-          placeholder="write comment" 
+          placeholder="Write comment..." 
           value={desc}
           onChange={e=>setDesc(e.target.value)}/>
         <button onClick={handleClick}>Send</button>
