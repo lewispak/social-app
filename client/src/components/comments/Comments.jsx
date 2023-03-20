@@ -41,7 +41,7 @@ const Comments = ({postId}) => {
 
       {/* Input Comment Section */}
       <div className="write">
-        <img src={currentUser.profilePic} alt="" />
+        <img src={"/upload/" + currentUser.profilePic} alt="" />
         <input 
           type="text"  
           placeholder="write comment" 
