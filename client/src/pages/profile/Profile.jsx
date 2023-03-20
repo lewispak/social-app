@@ -23,13 +23,25 @@ const Profile = () => {
 
   const userId = parseInt(useLocation().pathname.split("/")[2]); 
 
+  const { data: relationshipData } = useQuery(["relationship"], () =>
+    makeRequest.get("/relationships?followedUserId=" + userId).then((res) => {
+      return res.data;
+    })
+  );
+
+  console.log(relationshipData)
+
   const { isLoading, error, data } = useQuery(["user"], () =>
     makeRequest.get("/users/find/" + userId).then((res) => {
       return res.data;
     })
   );
 
-  console.log(data)
+  
+
+  const handleFollow = () => {
+
+  }
 
   return (
     <div className='profile'>
@@ -67,7 +79,7 @@ const Profile = () => {
 
               {/* User Info */}
               <div className="center">
-                <span>Xi Xoe</span>
+                <span>{data.name}</span>
                 <div className="info">
                   <div className="item">
                     <PlaceIcon />
@@ -78,7 +90,14 @@ const Profile = () => {
                     <span>{data.website}</span>
                   </div>
                 </div>
-                {userId === currentUser.id ? (<button>Update</button>) : <button>Follow</button>}
+                {userId === currentUser.id ? (
+                  <button>Update</button>
+                ) : (
+                  <button onClick={handleFollow}>{relationshipData.includes(currentUser.id) 
+                    ? "Following" 
+                    : "Follow"}
+                  </button>
+                )}
               </div>
 
               {/* Email & More Icons */}
